@@ -26,14 +26,6 @@ export class PostsService {
         fecha: '12/12',
         categoria: 'comida',
       },
-      {
-        titulo: 'piruleta',
-        texto: 'mm que rico esta',
-        autor: 'yo y solo yo',
-        imagen: 'https://www.caramelospaco.com/264-superlarge_default/piruleta-multicolor-grande.jpg',
-        fecha: '12/12',
-        categoria: 'caramelos',
-      }
     ];
   }
 
@@ -43,6 +35,8 @@ export class PostsService {
     } else {
       alert('El titulo del post ya existe')
     }
+
+    console.log(this.arrPosts);
 
   }
 

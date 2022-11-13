@@ -1,1 +1,40 @@
-<p>formulario works!</p>
+<div class="formulario">
+    <form [formGroup]="formulario" (ngSubmit)="pulsarBoton()">
+        <div class="mb-3">
+            <label class="form-label">Titulo</label>
+            <input type="text" class="form-control" formControlName="titulo">
+            <p class="error" *ngIf="checkError('titulo', 'required')">El campo titulo es requerido</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Cuerpo</label>
+            <textarea class="form-control" formControlName="texto"></textarea>
+            <p class="error" *ngIf="checkError('texto', 'required')">El campo cuerpo es requerido</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Autor</label>
+            <input type="text" class="form-control" formControlName="autor">
+            <p class="error" *ngIf="checkError('autor', 'required')">El campo autor es requerido</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Imagen</label>
+            <input type="text" class="form-control" formControlName="imagen">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fecha</label>
+            <input type="text" class="form-control" formControlName="fecha">
+            <p class="error" *ngIf="checkError('fecha', 'required')">El campo fecha es requerido</p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Categoria</label>
+            <select class="form-select" formControlName="categoria">
+                <option value="desayuno">Desayuno</option>
+                <option value="comida">Comida</option>
+                <option value="merienda">Merienda</option>
+                <option value="cena">Cena</option>
+            </select>
+            <p class="error" *ngIf="checkError('categoria', 'required')">El campo categoria es requerido</p>
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
+    <button [routerLink]="['/posts']">Volver a pagina anterior</button>
+</div>
