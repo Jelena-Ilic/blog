@@ -6,10 +6,11 @@
 <div class="posts">
     <div class="post" *ngFor="let post of arrPosts">
         <h2>{{post.titulo}}</h2>
+        <hr>
         <img [src]="post.imagen">
-        <p>{{post.texto}}</p>
-        <p>{{post.autor}}</p>
-        <p>{{post.fecha}}</p>
-        <p>{{post.categoria}}</p>
+        <p><span>Descripción:</span> {{post.texto}}</p>
+        <p><span>Autor:</span> {{post.autor}}</p>
+        <p><span>Fecha de publicación:</span> {{post.fecha}}</p>
+        <p><span>Categoria:</span> {{post.categoria}}</p>
     </div>
 </div>

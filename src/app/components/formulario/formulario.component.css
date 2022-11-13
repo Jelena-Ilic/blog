@@ -18,3 +18,45 @@ select.ng-invalid.ng-touched {
     font-size: 14px;
     color: lightcoral;
 }
+
+.formulario {
+    width: 400px;
+    margin: 40px;
+    background-color: lightblue;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.formulario label {
+    background-color: lightcyan;
+    text-align: center;
+    padding: 5px;
+    width: 360px;
+    border-radius: 5px;
+}
+
+button {
+    margin-left: 20px;
+}
+
+.botones input {
+    background-color: lightblue;
+    border: 4px solid lightcyan;
+    transition: .3s;
+    font-weight: 700;
+}
+
+.botones input:hover {
+    background-color: lightcyan;
+}
+
+.botones button {
+    background-color: lightblue;
+    border: 4px solid lightcyan;
+    transition: .3s;
+    font-weight: 700;
+}
+
+.botones button:hover {
+    background-color: lightcyan;
+}

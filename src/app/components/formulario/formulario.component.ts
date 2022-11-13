@@ -21,13 +21,13 @@ export class FormularioComponent implements OnInit {
       texto: new FormControl('', [
         Validators.required,
       ]),
-      imagen: new FormControl(),
+      imagen: new FormControl('', [
+        Validators.required,
+      ]),
       autor: new FormControl('', [
         Validators.required,
       ]),
-      fecha: new FormControl('', [
-        Validators.required,
-      ]),
+      fecha: new FormControl(),
       categoria: new FormControl('', [
         Validators.required,
       ]),

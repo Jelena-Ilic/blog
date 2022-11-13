@@ -18,11 +18,11 @@
         <div class="mb-3">
             <label class="form-label">Imagen</label>
             <input type="text" class="form-control" formControlName="imagen">
+            <p class="error" *ngIf="checkError('imagen', 'required')">El campo imagen es requerido</p>
         </div>
         <div class="mb-3">
             <label class="form-label">Fecha</label>
             <input type="text" class="form-control" formControlName="fecha">
-            <p class="error" *ngIf="checkError('fecha', 'required')">El campo fecha es requerido</p>
         </div>
         <div class="mb-3">
             <label class="form-label">Categoria</label>
@@ -34,7 +34,9 @@
             </select>
             <p class="error" *ngIf="checkError('categoria', 'required')">El campo categoria es requerido</p>
         </div>
-        <input type="submit" value="Enviar">
+        <div class="botones">
+            <input type="submit" value="Enviar">
+            <button [routerLink]="['/posts']">Volver a pagina anterior</button>
+        </div>
     </form>
-    <button [routerLink]="['/posts']">Volver a pagina anterior</button>
 </div>
