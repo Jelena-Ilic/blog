@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from 'src/app/interfaces/post.interfaces';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-lista-post',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaPostComponent implements OnInit {
 
-  constructor() { }
+  arrPosts: Post[];
+  optionsCategories: string[];
+
+  constructor(
+    private postService: PostsService
+  ) {
+    this.arrPosts = [];
+    this.optionsCategories = [];
+  }
 
   ngOnInit(): void {
+    this.getListaAll()
+  }
+
+  getListaAll() {
+    this.arrPosts = this.postService.getAll();
+  }
+
+  getListCategories() {
+    this.optionsCategories = this.postService.getAllCategories()
   }
 
 }
