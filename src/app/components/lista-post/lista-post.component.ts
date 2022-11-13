@@ -11,16 +11,19 @@ export class ListaPostComponent implements OnInit {
 
   arrPosts: Post[];
   optionsCategories: string[];
+  selectedOption: string;
 
   constructor(
     private postService: PostsService
   ) {
     this.arrPosts = [];
     this.optionsCategories = [];
+    this.selectedOption = '';
   }
 
   ngOnInit(): void {
-    this.getListaAll()
+    this.getListaAll();
+    this.getListCategories();
   }
 
   getListaAll() {
@@ -29,6 +32,11 @@ export class ListaPostComponent implements OnInit {
 
   getListCategories() {
     this.optionsCategories = this.postService.getAllCategories()
+  }
+
+  optionSelected(event: any) {
+    this.selectedOption = event.target.value;
+    this.arrPosts = this.postService.filterByCategoria(this.selectedOption);
   }
 
 }

@@ -1,3 +1,8 @@
+<select id="categorias" (change)="optionSelected($event)">
+    <option [value]="null">Selecciona Categoria</option>
+    <option *ngFor="let category of optionsCategories" [value]="category">{{category}}</option>
+</select>
+
 <div class="posts">
     <div class="post" *ngFor="let post of arrPosts">
         <h2>{{post.titulo}}</h2>
