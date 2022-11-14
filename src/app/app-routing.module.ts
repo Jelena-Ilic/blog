@@ -4,8 +4,10 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { ListaPostComponent } from './components/lista-post/lista-post.component';
 
 const routes: Routes = [
+  { path: '', component: ListaPostComponent },
   { path: 'posts', component: ListaPostComponent },
-  { path: 'blog/new', component: FormularioComponent }
+  { path: 'blog/new', component: FormularioComponent },
+  { path: '**', redirectTo: '/posts' }
 ];
 
 @NgModule({
